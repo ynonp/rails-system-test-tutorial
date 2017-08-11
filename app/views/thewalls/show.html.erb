@@ -1,0 +1,18 @@
+<h1>The Wall - Message Board</h1>
+
+<%= form_tag(thewall_path) do %>
+  <label>
+    Message Text
+    <%= text_field_tag(:text) %>
+  </label>
+  <%= submit_tag %>
+<% end %>
+
+<%= link_to 'Delete All',  thewall_path,  method: :delete %>
+
+
+<ul>
+<% @messages.each do |msg| %>
+  <li><%= msg[:text] %>
+<% end %>
+</ul>
